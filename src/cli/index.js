@@ -24,6 +24,11 @@ module.exports = function() {
         alias: 'w',
         description: 'Watch file(s)'
       },
+      'watch-timeout': {
+        alias: 'wt',
+        description: 'Delay re-load of db.json (ms)',
+        default: 300
+      },
       routes: {
         alias: 'r',
         description: 'Path to routes file'

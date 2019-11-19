@@ -9,6 +9,7 @@
   },
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
+    "install": "npm run build",
     "test": "npm run build && cross-env NODE_ENV=test jest && npm run lint",
     "start": "run-p start:**",
     "start:babel-node": "babel-node src/cli/bin db.json -r routes.json",

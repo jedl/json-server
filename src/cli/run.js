@@ -213,10 +213,12 @@ module.exports = function(argv) {
                 // Compare .json file content with in memory database
                 const isDatabaseDifferent = !_.isEqual(obj, app.db.getState())
                 if (isDatabaseDifferent) {
-                  console.log(
-                    chalk.gray(`  ${source} has changed, reloading...`)
-                  )
-                  server && server.destroy(() => start())
+                  setTimeout(() => {
+                    console.log(
+                      chalk.gray(`  ${source} has changed, reloading...`)
+                    )
+                    server && server.destroy(() => start())
+                  }, argv.waitTimeout);
                 }
               }
             }
